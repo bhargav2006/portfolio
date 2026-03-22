@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katakam Bhargav — Full Stack Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
+    />
+    <meta name="author" content="Katakam Bhargav" />
+    <meta
+      name="keywords"
+      content="Katakam Bhargav, Full Stack Developer, Portfolio, Java, Python, React, Node.js, Web Developer"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="theme-color"
+      content="#f8fafc"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#030712"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Katakam Bhargav — Full Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
+    />
+    <meta property="og:image" content="./img/IMG_7926.png" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Katakam Bhargav — Web Developer and Data Analyst Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
+    />
+    <meta name="twitter:image" content="./img/IMG_7926.png" />
+    <link rel="icon" type="image/jpeg" href="./img/kb_logo.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="./img/kb_logo.jpg" />
+    <link rel="alternate icon" type="image/png" href="./img/IMG_7926.png" />
+    <link rel="apple-touch-icon" href="./img/IMG_7926.png" />
+    <link rel="canonical" href="./" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+     LOADING SCREEN
+     ============================================================ -->
+    <div class="loader-overlay" id="loader">
+      <div class="loader-container">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">
+          Loading <span class="loader-progress">0</span>%
+        </p>
+        <div class="loader-bar">
+          <div class="loader-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     MOBILE NAVBAR
+     ============================================================ -->
+    <nav class="mobile-nav">
+      <a
+        class="mobile-nav-left mobile-home-link"
+        href="#home"
+        aria-label="Go to home"
+      >
+        <div class="mobile-profile-img">
+          <img
+            src="./img/IMG_7926.png"
+            data-fallback='<div class="mobile-profile-initials">KB</div>'
+            alt="Katakam Bhargav"
+          />
+        </div>
+        <span class="mobile-name">Katakam Bhargav</span>
+      </a>
+      <div class="mobile-nav-right">
+        <button class="theme-btn" aria-label="Toggle theme"></button>
+        <button class="hamburger-btn" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-dropdown" id="mobile-dropdown">
+      <a href="#home">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        Home
+      </a>
+      <a href="#about">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        About
+      </a>
+      <a href="#experience">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+        </svg>
+        Education &amp; Experience
+      </a>
+      <a href="#skills">
+        <svg viewBox="0 0 24 24">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg>
+        Skills
+      </a>
+      <a href="#projects">
+        <svg viewBox="0 0 24 24">
+          <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          <polyline points="2 17 12 22 22 17" />
+          <polyline points="2 12 12 17 22 12" />
+        </svg>
+        Projects
+      </a>
+      <a href="#certifications">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="6" />
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+        </svg>
+        Certifications
+      </a>
+      <a href="#contact">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        Contact
+      </a>
+    </div>
+
+    <!-- ============================================================
+     LAYOUT
+     ============================================================ -->
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <!-- Profile -->
+        <div class="sidebar-profile">
+          <div class="profile-img-wrap">
+            <img
+              src="./img/IMG_7926.png"
+              data-fallback='<div class="profile-initials">KB</div>'
+              alt="Katakam Bhargav"
+            />
+          </div>
+          <div class="sidebar-name">Katakam Bhargav</div>
+          <div class="sidebar-title">Full Stack Developer</div>
+          <div class="sidebar-socials">
+            <a
+              href="https://github.com/bhargav2006"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bhargav-katakam-62118227a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="mailto:katakambhargav073@gmail.com"
+              class="social-btn"
+              aria-label="Email"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Nav Links -->
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#home" class="active">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#experience">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                Education &amp; Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#certifications">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+                Certifications
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <button class="theme-btn" aria-label="Toggle theme"></button>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+        <section id="home">
+          <div class="hero-glow"></div>
+          <div class="hero-inner">
+            <div class="hero-text">
+              <div class="hero-badge">
+                <span class="dot"></span>
+                Welcome to my portfolio
+              </div>
+              <h1 class="hero-heading">
+                Hi, I'm<br />
+                <span class="name">Katakam Bhargav</span>
+              </h1>
+              <p class="hero-typing">
+                I'm a <span class="role" id="typed-text"></span
+                ><span class="cursor"></span>
+              </p>
+              <p class="hero-desc">
+                I build modern, scalable web applications and RESTful APIs.
+                Passionate about solving complex problems with clean, efficient
+                code.
+              </p>
+              <div class="hero-btns">
+                <a href="#projects" class="btn-primary">
+                  View Projects
+                  <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+                <a href="#contact" class="btn-outline">
+                  Get In Touch
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="hero-photo-wrap">
+              <div class="hero-photo">
+                <img
+                  src="./img/IMG_7926.png"
+                  data-fallback='<div class="hero-photo-initials">KB</div>'
+                  alt="Katakam Bhargav"
+                />
+              </div>
+              <div class="hero-photo-decoration"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+        <section id="about">
+          <div class="section-header reveal">
+            <span class="section-label">Get To Know Me</span>
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="about-inner">
+            <div class="about-text reveal">
+              <p>
+                A Final Year Engineering graduate specializing in Computer
+                Science, with expertise in Programming, Web app development and
+                Data analysis. Previously been a Full stack Java development
+                Intern for 6 months, thus gained hands-on experience. A self
+                starter, learner, has strong problem solving skills and has a
+                passion for technology. Currently seeking for internship
+                opportunities to improve skills and perform to the best of my
+                abilities and to be a part of company growth.
+              </p>
+
+              <div class="about-details">
+                <div class="detail-item">
+                  <span class="detail-label">Name</span>
+                  <span class="detail-value">Katakam Bhargav</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Date of Birth</span>
+                  <span class="detail-value">28-01-2006</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Email</span>
+                  <span class="detail-value">Katakambhargav073@gmail.com</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value"
+                    >Palakollu, West Godavari, Andhra Pradesh, India,
+                    534260.</span
+                  >
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Languages</span>
+                  <span class="detail-value">Telugu, English, Hindi</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Status</span>
+                  <span class="detail-value">Open to Opportunities</span>
+                </div>
+              </div>
+
+              <div class="about-actions">
+                <button
+                  class="btn-primary"
+                  data-modal="My Resume"
+                  data-pdf="./resume.pdf"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    style="
+                      width: 16px;
+                      height: 16px;
+                      fill: none;
+                      stroke: currentColor;
+                      stroke-width: 2;
+                    "
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  View Resume
+                </button>
+                <a href="./resume.pdf" class="btn-outline" download>
+                  <svg
+                    viewBox="0 0 24 24"
+                    style="
+                      width: 16px;
+                      height: 16px;
+                      fill: none;
+                      stroke: currentColor;
+                      stroke-width: 2;
+                    "
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download Resume
+                </a>
+              </div>
+            </div>
+
+            <div class="about-img-col reveal">
+              <div class="about-photo">
+                <img
+                  src="./img/IMG_7926.png"
+                  data-fallback='<div class="about-photo-placeholder">KB</div>'
+                  alt="Katakam Bhargav portrait"
+                />
+              </div>
+              <div class="about-stats">
+                <div class="stat-card">
+                  <div class="stat-num">3+</div>
+                  <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num">4+</div>
+                  <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num">1+</div>
+                  <div class="stat-label">Internship</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         EXPERIENCE / TIMELINE SECTION
+         ============================================================ -->
+        <section id="experience">
+          <div class="section-header reveal">
+            <span class="section-label">My Journey</span>
+            <h2 class="section-title">
+              Education &amp; <span>Experience</span>
+            </h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="experience-grid reveal">
+            <div class="experience-col">
+              <h3 class="experience-col-title">Education</h3>
+              <div class="timeline">
+                <div class="timeline-item reveal">
+                  <div class="timeline-header">
+                    <div class="timeline-title">
+                      B.Tech Computer Science &amp; Engineering
+                    </div>
+                    <span class="timeline-badge badge-edu">CGPA: 7.63</span>
+                  </div>
+                  <div class="timeline-org">
+                    Swarnandhra College of Engineering and Technology,
+                    Narasapuram
+                  </div>
+                  <div class="timeline-date">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    July 2024 – Present
+                  </div>
+                  <p class="timeline-desc">
+                    Pursuing Bachelor's in Computer Science and Engineering with
+                    a focus on software development, data structures,
+                    algorithms, and full-stack web technologies.
+                  </p>
+                </div>
+
+                <div class="timeline-item reveal">
+                  <div class="timeline-header">
+                    <div class="timeline-title">
+                      Diploma — Computer Engineering
+                    </div>
+                    <span class="timeline-badge badge-edu">77.35%</span>
+                  </div>
+                  <div class="timeline-org">
+                    Smt.B.Seetha Polytechnic, Bhimavaram
+                  </div>
+                  <div class="timeline-date">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    June 2021 – April 2024
+                  </div>
+                  <p class="timeline-desc">
+                    Focused on core computer engineering concepts including
+                    programming, computer hardware, networking, and
+                    problem-solving. Built a strong technical foundation through
+                    practical labs and academic projects.
+                  </p>
+                </div>
+
+                <div class="timeline-item reveal">
+                  <div class="timeline-header">
+                    <div class="timeline-title">
+                      10th Class — Secondary Education
+                    </div>
+                    <span class="timeline-badge badge-edu">CGPA: 8.7</span>
+                  </div>
+                  <div class="timeline-org">
+                    Brmv Municipal High School, Palakollu,West Godavari
+                  </div>
+                  <div class="timeline-date">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    2020 – 2021
+                  </div>
+                  <p class="timeline-desc">
+                    Completed secondary education with excellent academic
+                    performance and consistent top rankings throughout the year.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-col">
+              <h3 class="experience-col-title">Professional Experience</h3>
+              <div class="timeline">
+                <div class="timeline-item reveal">
+                  <div class="timeline-header">
+                    <div class="timeline-title">Java Web Developer Intern</div>
+                    <!-- <span class="timeline-badge badge-work">Work</span> -->
+                  </div>
+                  <div class="timeline-org">
+                    R.K.InfoSystems, Hyderabad, Telangana
+                  </div>
+                  <div class="timeline-date">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    June 2023 – November 2023
+                  </div>
+                  <ul class="timeline-points">
+                    <li>
+                      Developed a QR-based Dine-in Reservation application using
+                      ReactJS for frontend, Java Servlets for backend, and MySQL
+                      database.
+                    </li>
+                    <li>
+                      Designed and implemented RESTful APIs for efficient
+                      communication between frontend and backend systems.
+                    </li>
+                    <li>
+                      Improved application performance, fixed bugs, and enhanced
+                      security features for better reliability.
+                    </li>
+                    <li>
+                      Gained hands-on experience in full-stack development,
+                      debugging, and collaborative team workflows.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         SKILLS SECTION
+         ============================================================ -->
+        <section id="skills">
+          <div class="section-header reveal">
+            <span class="section-label">What I Know</span>
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Programming</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-tech">C, Java, Python</div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Web Development</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-tech">
+                HTML, CSS, JavaScript, React.js, Java Servlets
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="85"></div>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Database</span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-tech">MySQL</div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="75"></div>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Data Analysis</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-tech">
+                Data Cleaning (Pandas), Data Visualization (Matplotlib, Seaborn)
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="70"></div>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Tools</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-tech">VS Code, Eclipse, Git, GitHub</div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-header">
+                <span class="skill-name">Soft skills</span>
+                <span class="skill-percent">100%</span>
+              </div>
+              <div class="skill-tech">
+                Problem Solving, Industrious, Growth Oriented, Adaptability
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-pct="100"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         PROJECTS SECTION
+         ============================================================ -->
+        <section id="projects">
+          <div class="section-header reveal">
+            <span class="section-label">What I've Built</span>
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <p class="section-subtext">
+              Here are some of my projects I have done lately. Feel free to
+              check them out.
+            </p>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card reveal">
+              <div class="project-img">
+                <img src="./img/projects/StocksApp.png" alt="StocksApp" />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">StocksApp</h3>
+                <div class="project-date">July 2025 - August 2025</div>
+                <p class="project-desc">
+                  Developed a responsive stock dashboard using ReactJs,
+                  Bootstrap CSS, and Finnhub API to display dynamic company
+                  profiles and real-time stock quotes.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">ReactJs</span>
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">Finnhub API</span>
+                  <span class="tag">Dashboard</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/bhargav2006/StocksApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    View Project
+                    <svg viewBox="0 0 24 24">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://bhargav2006.github.io/StocksApp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    Live Demo
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card reveal">
+              <div class="project-img">
+                <img
+                  src="./img/projects/React_ToDo.png"
+                  alt="Simple React ToDo Application"
+                />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Simple React ToDo Application</h3>
+                <div class="project-date">May 2025 - June 2025</div>
+                <p class="project-desc">
+                  Implemented a simple front-end To-Do application built with
+                  React and Bootstrap CSS, with React Toastify alerts for
+                  real-time notifications on add/delete actions.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">React Toastify</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/bhargav2006/simple_ReactTODO"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    View Project
+                    <svg viewBox="0 0 24 24">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://simple-react-todo-virid.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    Live Demo
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card reveal">
+              <div class="project-img">
+                <img
+                  src="./img/projects/ToDo_Backend.jpg"
+                  alt="ToDo Application Backend"
+                />
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">ToDo Application Backend</h3>
+                <div class="project-date">March 2025 - May 2025</div>
+                <p class="project-desc">
+                  Developed a backend for a To-Do application using Node.js,
+                  Express.js, and MongoDB with REST APIs for user and task CRUD
+                  operations, including authentication and protected routes
+                  using Express middleware.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express.js</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">REST APIs</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/bhargav2006/ToDo_Backend"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    View Project
+                    <svg viewBox="0 0 24 24">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         CERTIFICATIONS SECTION
+         ============================================================ -->
+        <section id="certifications">
+          <div class="section-header reveal">
+            <span class="section-label">My Achievements</span>
+            <h2 class="section-title">My <span>Certifications</span></h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="certs-grid">
+            <div class="cert-card reveal">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="cert-title">Web Dev Intern at R.K.InfoSystems</div>
+              <div class="cert-meta">
+                <span class="cert-issuer">LinkedIn</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-actions">
+                <button
+                  class="cert-btn"
+                  data-modal="Web Dev Intern at R.K.InfoSystems"
+                  data-pdf="./img/cirtifications/Bhargav_RK_Info_Systems_OL.png"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  Preview
+                </button>
+                <a
+                  class="cert-btn cert-btn-secondary"
+                  href="https://www.linkedin.com/in/bhargav-katakam-62118227a/overlay/Position/2504867943/treasury/?profileId=ACoAAEQDRPkBK7FUHgQizLN45qd7LAKRNNtQkhI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Original Link
+                </a>
+              </div>
+            </div>
+
+            <div class="cert-card reveal">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="cert-title">Python 101 for Data Science</div>
+              <div class="cert-meta">
+                <span class="cert-issuer">Cognitive Class</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-actions">
+                <button
+                  class="cert-btn"
+                  data-modal="Python 101 for Data Science"
+                  data-pdf="./img/cirtifications/Python_101_for_Data_Science.pdf"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  Preview
+                </button>
+                <a
+                  class="cert-btn cert-btn-secondary"
+                  href="https://courses.cognitiveclass.ai/certificates/0c30761584c0401b970a9e4befe5e183"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Original Link
+                </a>
+              </div>
+            </div>
+
+            <div class="cert-card reveal">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="cert-title">Data Visualization Using Python</div>
+              <div class="cert-meta">
+                <span class="cert-issuer">Credly</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-actions">
+                <button
+                  class="cert-btn"
+                  data-modal="Data Visualization Using Python"
+                  data-pdf="./img/cirtifications/Data_Visualization_Using_Python.pdf"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  Preview
+                </button>
+                <a
+                  class="cert-btn cert-btn-secondary"
+                  href="https://www.credly.com/badges/859167ee-cb2e-4c4f-8c35-e96d195deac5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Original Link
+                </a>
+              </div>
+            </div>
+
+            <div class="cert-card reveal">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="cert-title">Data Analysis with Python</div>
+              <div class="cert-meta">
+                <span class="cert-issuer">Cognitive Class</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-actions">
+                <button
+                  class="cert-btn"
+                  data-modal="Data Analysis with Python"
+                  data-pdf="./img/cirtifications/Data_Analysis_with_Python.pdf"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  Preview
+                </button>
+                <a
+                  class="cert-btn cert-btn-secondary"
+                  href="https://courses.cognitiveclass.ai/certificates/e0f3566951e949b480a096768cc7917f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Original Link
+                </a>
+              </div>
+            </div>
+
+            <div class="cert-card reveal">
+              <div class="cert-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="cert-title">
+                AWS Academy Graduate - AWS Academy Data Engineering
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer">Credly</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div class="cert-actions">
+                <button
+                  class="cert-btn"
+                  data-modal="AWS Academy Graduate - AWS Academy Data Engineering"
+                  data-pdf="./img/cirtifications/AWS_Academy_Graduate-Data_Engineering-Training_Badge.pdf"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  Preview
+                </button>
+                <a
+                  class="cert-btn cert-btn-secondary"
+                  href="https://www.credly.com/badges/67e09602-6143-489d-a71d-70278a23b9e9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Original Link
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+        <section id="contact">
+          <div class="section-header reveal">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="contact-inner">
+            <div class="contact-cards">
+              <div class="contact-card reveal">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">Address</div>
+                  <div class="contact-value">
+                    <a
+                      href="https://maps.google.com/?cid=18313922350827072918&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAEYASAB&hl=en&gl=IN&source=embed"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Palakollu, West Godavari, Andhra Pradesh, India, 534260.
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card reveal">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-value">
+                    <a href="tel:+918074200988">+91 8074200988</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card reveal">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">
+                    <a href="mailto:katakambhargav073@gmail.com"
+                      >katakambhargav073@gmail.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card reveal">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">LinkedIn</div>
+                  <div class="contact-value">
+                    <a
+                      href="https://www.linkedin.com/in/bhargav-katakam-62118227a/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >linkedin.com/in/bhargav-katakam-62118227a</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-wrap reveal">
+              <iframe
+                title="Palakollu Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30601.67652937741!2d81.72927995!3d16.51551445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37dafa23f8abc1%3A0xfe281f58c5226d96!2sPalakollu%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1774178576448!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <span>© 2025 Katakam Bhargav. All rights reserved.</span>
+        </footer>
+      </main>
+    </div>
+
+    <!-- ============================================================
+     PDF MODAL
+     ============================================================ -->
+    <div class="modal-overlay" id="pdf-modal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <span class="modal-title" id="modal-title">Certificate</span>
+          <button class="modal-close" id="modal-close" aria-label="Close">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            class="modal-pdf"
+            id="modal-pdf"
+            title="PDF Preview"
+            src=""
+          ></iframe>
+          <div class="modal-image-wrap" id="modal-image-wrap">
+            <img
+              class="modal-image"
+              id="modal-image"
+              alt="Certificate Preview"
+              src=""
+            />
+          </div>
+          <div class="modal-placeholder" id="modal-placeholder">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <h3 id="modal-cert-name">Certificate</h3>
+            <p>Certificate PDF will appear here once uploaded.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
