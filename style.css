@@ -1713,7 +1713,7 @@ section {
 
 /* availability status */
 
-.footer-status {
+.footer .footer-status {
   font-size: 12px;
 
   font-weight: 600;
@@ -1727,7 +1727,7 @@ section {
 
 /* animated status dot */
 
-.footer-status .dot {
+.footer .footer-status .dot {
   width: 8px;
   height: 8px;
 
