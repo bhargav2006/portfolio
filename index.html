@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Katakam Bhargav — Full Stack Developer Portfolio</title>
     <meta
+      name="google-site-verification"
+      content="idt5DNYCF0M9eD0mhk5FIcdu_sWWr55oUvGfryec9ZQ"
+    />
+    <meta
       name="description"
       content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
     />
@@ -33,7 +37,7 @@
       property="og:description"
       content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
     />
-    <meta property="og:image" content="./img/IMG_7926.png" />
+    <meta property="og:image" content="./assets/IMG_7926.png" />
     <meta property="og:locale" content="en_IN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -44,11 +48,11 @@
       name="twitter:description"
       content="Portfolio of Katakam Bhargav, Full Stack Developer and Computer Science student at KL University."
     />
-    <meta name="twitter:image" content="./img/IMG_7926.png" />
-    <link rel="icon" type="image/jpeg" href="./img/kb_logo.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="./img/kb_logo.jpg" />
-    <link rel="alternate icon" type="image/png" href="./img/IMG_7926.png" />
-    <link rel="apple-touch-icon" href="./img/IMG_7926.png" />
+    <meta name="twitter:image" content="./assets/IMG_7926.png" />
+    <link rel="icon" type="image/jpeg" href="./assets/kb_logo.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="./assets/kb_logo.jpg" />
+    <link rel="alternate icon" type="image/png" href="./assets/IMG_7926.png" />
+    <link rel="apple-touch-icon" href="./assets/IMG_7926.png" />
     <link rel="canonical" href="./" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -68,6 +72,8 @@
       </div>
     </div>
 
+    <div class="ambient-gradient" aria-hidden="true"></div>
+
     <!-- ============================================================
      MOBILE NAVBAR
      ============================================================ -->
@@ -79,7 +85,10 @@
       >
         <div class="mobile-profile-img">
           <img
-            src="./img/IMG_7926.png"
+            src="./assets/IMG_7926.png"
+            loading="eager"
+            fetchpriority="high"
+            data-loader-critical="profile"
             data-fallback='<div class="mobile-profile-initials">KB</div>'
             alt="Katakam Bhargav"
           />
@@ -159,7 +168,10 @@
         <div class="sidebar-profile">
           <div class="profile-img-wrap">
             <img
-              src="./img/IMG_7926.png"
+              src="./assets/IMG_7926.png"
+              loading="eager"
+              fetchpriority="high"
+              data-loader-critical="profile"
               data-fallback='<div class="profile-initials">KB</div>'
               alt="Katakam Bhargav"
             />
@@ -335,7 +347,10 @@
             <div class="hero-photo-wrap">
               <div class="hero-photo">
                 <img
-                  src="./img/IMG_7926.png"
+                  src="./assets/IMG_7926.png"
+                  loading="eager"
+                  fetchpriority="high"
+                  data-loader-critical="profile"
                   data-fallback='<div class="hero-photo-initials">KB</div>'
                   alt="Katakam Bhargav"
                 />
@@ -403,6 +418,7 @@
                   class="btn-primary"
                   data-modal="My Resume"
                   data-pdf="./BHARGAV_RESUME.pdf"
+                  data-loader-critical-doc="resume"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -444,7 +460,10 @@
             <div class="about-img-col reveal">
               <div class="about-photo">
                 <img
-                  src="./img/IMG_7926.png"
+                  src="./assets/IMG_7926.png"
+                  loading="eager"
+                  fetchpriority="high"
+                  data-loader-critical="profile"
                   data-fallback='<div class="about-photo-placeholder">KB</div>'
                   alt="Katakam Bhargav portrait"
                 />
@@ -712,7 +731,7 @@
             <!-- Project 1 -->
             <div class="project-card reveal">
               <div class="project-img">
-                <img src="./img/projects/StocksApp.png" alt="StocksApp" />
+                <img src="./assets/projects/StocksApp.png" alt="StocksApp" />
               </div>
               <div class="project-body">
                 <h3 class="project-title">StocksApp</h3>
@@ -764,7 +783,7 @@
             <div class="project-card reveal">
               <div class="project-img">
                 <img
-                  src="./img/projects/React_ToDo.png"
+                  src="./assets/projects/React_ToDo.png"
                   alt="Simple React ToDo Application"
                 />
               </div>
@@ -817,7 +836,7 @@
             <div class="project-card reveal">
               <div class="project-img">
                 <img
-                  src="./img/projects/ToDo_Backend.jpg"
+                  src="./assets/projects/ToDo_Backend.jpg"
                   alt="ToDo Application Backend"
                 />
               </div>
@@ -882,7 +901,7 @@
                 <button
                   class="cert-btn"
                   data-modal="Web Dev Intern at R.K.InfoSystems"
-                  data-pdf="./img/cirtifications/Bhargav_RK_Info_Systems_OL.png"
+                  data-pdf="./assets/cirtifications/Bhargav_RK_Info_Systems_OL.png"
                 >
                   <svg viewBox="0 0 24 24">
                     <path
@@ -926,7 +945,7 @@
                 <button
                   class="cert-btn"
                   data-modal="Python 101 for Data Science"
-                  data-pdf="./img/cirtifications/Python_101_for_Data_Science.pdf"
+                  data-pdf="./assets/cirtifications/Python_101_for_Data_Science.pdf"
                 >
                   <svg viewBox="0 0 24 24">
                     <path
@@ -970,7 +989,7 @@
                 <button
                   class="cert-btn"
                   data-modal="Data Visualization Using Python"
-                  data-pdf="./img/cirtifications/Data_Visualization_Using_Python.pdf"
+                  data-pdf="./assets/cirtifications/Data_Visualization_Using_Python.pdf"
                 >
                   <svg viewBox="0 0 24 24">
                     <path
@@ -1014,7 +1033,7 @@
                 <button
                   class="cert-btn"
                   data-modal="Data Analysis with Python"
-                  data-pdf="./img/cirtifications/Data_Analysis_with_Python.pdf"
+                  data-pdf="./assets/cirtifications/Data_Analysis_with_Python.pdf"
                 >
                   <svg viewBox="0 0 24 24">
                     <path
@@ -1060,7 +1079,7 @@
                 <button
                   class="cert-btn"
                   data-modal="AWS Academy Graduate - AWS Academy Data Engineering"
-                  data-pdf="./img/cirtifications/AWS_Academy_Graduate-Data_Engineering-Training_Badge.pdf"
+                  data-pdf="./assets/cirtifications/AWS_Academy_Graduate-Data_Engineering-Training_Badge.pdf"
                 >
                   <svg viewBox="0 0 24 24">
                     <path

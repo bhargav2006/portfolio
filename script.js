@@ -405,6 +405,42 @@ function initSmoothScroll() {
 }
 
 /* ============================================================
+   AMBIENT BACKGROUND ROTATION
+   ============================================================ */
+function initAmbientBackground() {
+  const root = document.documentElement;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (reducedMotion.matches) {
+    root.style.setProperty("--ambient-rotation", "0deg");
+    return;
+  }
+
+  let lastScrollY = window.scrollY || 0;
+  let rotation = 0;
+
+  function updateRotation(deltaY) {
+    rotation = (rotation + deltaY * 0.03) % 360;
+    root.style.setProperty("--ambient-rotation", `${rotation}deg`);
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const currentScrollY = window.scrollY || 0;
+      const deltaY = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+
+      if (!deltaY) return;
+      updateRotation(deltaY);
+    },
+    { passive: true },
+  );
+
+  root.style.setProperty("--ambient-rotation", "0deg");
+}
+
+/* ============================================================
    PROFILE IMAGE FALLBACK
    ============================================================ */
 function initImageFallback() {
@@ -429,20 +465,34 @@ function initLoader() {
   const progressText = loader.querySelector(".loader-progress");
   const progressBar = loader.querySelector(".loader-progress-bar");
 
-  // Define critical assets to preload
+  const criticalImageSources = [
+    ...new Set(
+      Array.from(document.querySelectorAll("img[data-loader-critical]"))
+        .map((img) => img.currentSrc || img.getAttribute("src") || "")
+        .filter(Boolean),
+    ),
+  ];
+  const criticalDocumentSources = [
+    ...new Set(
+      Array.from(document.querySelectorAll("[data-loader-critical-doc]"))
+        .map(
+          (el) => el.getAttribute("data-pdf") || el.getAttribute("href") || "",
+        )
+        .filter(Boolean),
+    ),
+  ];
   const criticalAssets = [
-    "./img/IMG_7926.png", // Profile image
-    "./img/projects/ToDo_Backend.jpg",
-    "./img/projects/React_ToDo.png",
-    "./img/projects/StocksApp.png",
+    ...criticalImageSources.map((src) => ({ type: "image", src })),
+    ...criticalDocumentSources.map((src) => ({ type: "document", src })),
   ];
 
   let loadedCount = 0;
   const totalAssets = criticalAssets.length;
-  const timeout = 3000; // 3 second max timeout
 
   function updateProgress() {
-    const percentage = Math.round((loadedCount / totalAssets) * 100);
+    const percentage = totalAssets
+      ? Math.round((loadedCount / totalAssets) * 100)
+      : 100;
     progressText.textContent = percentage;
     progressBar.style.width = percentage + "%";
   }
@@ -454,32 +504,61 @@ function initLoader() {
     }, 600);
   }
 
-  // Track image loading
-  criticalAssets.forEach((src) => {
-    const img = new Image();
-    img.onload = () => {
-      loadedCount++;
-      updateProgress();
-      if (loadedCount === totalAssets) {
-        fadeOutLoader();
-      }
-    };
-    img.onerror = () => {
-      loadedCount++;
-      updateProgress();
-      if (loadedCount === totalAssets) {
-        fadeOutLoader();
-      }
-    };
-    img.src = src;
-  });
-
-  // Fallback timeout to ensure loader fades out
-  setTimeout(() => {
-    if (!loader.classList.contains("fadeOut")) {
+  function markAssetSettled() {
+    loadedCount += 1;
+    updateProgress();
+    if (loadedCount >= totalAssets) {
       fadeOutLoader();
     }
-  }, timeout);
+  }
+
+  function waitForImage(src) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      const finish = () => resolve();
+
+      img.addEventListener("load", finish, { once: true });
+      img.addEventListener("error", finish, { once: true });
+      img.src = src;
+
+      if (img.complete) {
+        finish();
+      }
+    });
+  }
+
+  function waitForDocument(src) {
+    return new Promise((resolve) => {
+      const frame = document.createElement("iframe");
+      const finish = () => {
+        window.clearTimeout(fallbackTimer);
+        frame.remove();
+        resolve();
+      };
+
+      const fallbackTimer = window.setTimeout(finish, 5000);
+
+      frame.addEventListener("load", finish, { once: true });
+      frame.addEventListener("error", finish, { once: true });
+      frame.src = src;
+      frame.style.position = "absolute";
+      frame.style.width = "0";
+      frame.style.height = "0";
+      frame.style.border = "0";
+      frame.style.visibility = "hidden";
+      document.body.appendChild(frame);
+    });
+  }
+
+  if (!totalAssets) {
+    fadeOutLoader();
+    return;
+  }
+
+  criticalAssets.forEach((asset) => {
+    const loader = asset.type === "document" ? waitForDocument : waitForImage;
+    loader(asset.src).then(markAssetSettled);
+  });
 
   updateProgress();
 }
@@ -490,6 +569,7 @@ function initLoader() {
 document.addEventListener("DOMContentLoaded", () => {
   initLoader();
   initTheme();
+  initAmbientBackground();
   initMobileNav();
   initActiveNav();
   initTyping();
