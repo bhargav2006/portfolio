@@ -420,7 +420,7 @@ function initAmbientBackground() {
   let rotation = 0;
 
   function updateRotation(deltaY) {
-    rotation = (rotation + deltaY * 0.03) % 360;
+    rotation = (rotation + deltaY * 0.12) % 360;
     root.style.setProperty("--ambient-rotation", `${rotation}deg`);
   }
 

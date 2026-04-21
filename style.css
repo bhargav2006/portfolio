@@ -87,6 +87,7 @@ body {
   line-height: 1.6;
   position: relative;
   isolation: isolate;
+  overflow-x: hidden;
   transition:
     background var(--transition),
     color var(--transition);
@@ -95,29 +96,37 @@ body {
 .ambient-gradient {
   position: fixed;
   inset: -20vmax;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.95;
   transform: rotate(var(--ambient-rotation, 0deg));
   transform-origin: center;
   will-change: transform;
   background:
+    conic-gradient(
+      from 90deg,
+      transparent 0deg,
+      rgba(37, 99, 235, 0.05) 70deg,
+      transparent 150deg,
+      rgba(59, 130, 246, 0.04) 220deg,
+      transparent 360deg
+    ),
     radial-gradient(
       circle at 22% 20%,
       var(--ambient-glow-1) 0%,
-      transparent 42%
+      transparent 34%
     ),
     radial-gradient(
       circle at 78% 24%,
       var(--ambient-glow-2) 0%,
-      transparent 38%
+      transparent 30%
     ),
     radial-gradient(
       circle at 52% 78%,
       var(--ambient-glow-3) 0%,
-      transparent 45%
+      transparent 38%
     );
-  filter: blur(70px) saturate(115%);
+  filter: blur(84px) saturate(125%);
 }
 
 a {
@@ -138,6 +147,8 @@ img {
 .layout {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 /* SIDEBAR */
@@ -321,6 +332,8 @@ img {
   margin-left: var(--sidebar-w);
   flex: 1;
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================
@@ -546,11 +559,7 @@ section {
   display: flex;
   align-items: center;
   padding: 60px;
-  background: linear-gradient(
-    135deg,
-    var(--bg) 60%,
-    rgba(37, 99, 235, 0.04) 100%
-  );
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -784,7 +793,7 @@ section {
    ABOUT SECTION
    ============================================================ */
 #about {
-  background: var(--bg2);
+  background: transparent;
 }
 
 .about-inner {
@@ -914,7 +923,7 @@ section {
    EXPERIENCE / TIMELINE SECTION
    ============================================================ */
 #experience {
-  background: var(--bg);
+  background: transparent;
 }
 
 .experience-grid {
@@ -1108,9 +1117,9 @@ section {
 /* ============================================================
    SKILLS SECTION
    ============================================================ */
-#skills {
+/* #skills {
   background: var(--bg2);
-}
+} */
 
 .skills-grid {
   display: grid;
@@ -1179,7 +1188,7 @@ section {
    PROJECTS SECTION
    ============================================================ */
 #projects {
-  background: var(--bg);
+  background: transparent;
 }
 
 .projects-grid {
@@ -1310,7 +1319,7 @@ section {
    CERTIFICATIONS SECTION
    ============================================================ */
 #certifications {
-  background: var(--bg2);
+  background: transparent;
 }
 
 .certs-grid {
@@ -1433,7 +1442,7 @@ section {
    CONTACT SECTION
    ============================================================ */
 #contact {
-  background: var(--bg);
+  background: transparent;
 }
 
 .contact-inner {
