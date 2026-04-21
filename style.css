@@ -95,38 +95,46 @@ body {
 
 .ambient-gradient {
   position: fixed;
-  inset: -20vmax;
+  inset: -25vmax;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.95;
-  transform: rotate(var(--ambient-rotation, 0deg));
+  opacity: 0.9;
+
+  transform: rotate(var(--ambient-rotation, 0deg)) scale(1.1);
   transform-origin: center;
   will-change: transform;
+
   background:
     conic-gradient(
-      from 90deg,
-      transparent 0deg,
-      rgba(37, 99, 235, 0.05) 70deg,
-      transparent 150deg,
-      rgba(59, 130, 246, 0.04) 220deg,
-      transparent 360deg
+      from 0deg,
+      rgba(37, 99, 235, 0.12),
+      rgba(59, 130, 246, 0.08),
+      rgba(147, 51, 234, 0.08),
+      rgba(20, 184, 166, 0.08),
+      rgba(37, 99, 235, 0.12)
     ),
-    radial-gradient(
-      circle at 22% 20%,
-      var(--ambient-glow-1) 0%,
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 78% 24%,
-      var(--ambient-glow-2) 0%,
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 52% 78%,
-      var(--ambient-glow-3) 0%,
-      transparent 38%
-    );
-  filter: blur(84px) saturate(125%);
+    radial-gradient(circle at 25% 30%, var(--ambient-glow-1), transparent 40%),
+    radial-gradient(circle at 75% 25%, var(--ambient-glow-2), transparent 35%),
+    radial-gradient(circle at 50% 80%, var(--ambient-glow-3), transparent 45%);
+
+  filter: blur(90px) saturate(120%);
+}
+
+@keyframes ambientFloat {
+  0% {
+    transform: rotate(var(--ambient-rotation)) scale(1.1) translateY(0px);
+  }
+  50% {
+    transform: rotate(calc(var(--ambient-rotation) + 5deg)) scale(1.12)
+      translateY(-20px);
+  }
+  100% {
+    transform: rotate(var(--ambient-rotation)) scale(1.1) translateY(0px);
+  }
+}
+
+.ambient-gradient {
+  animation: ambientFloat 18s ease-in-out infinite;
 }
 
 a {
@@ -1706,7 +1714,203 @@ section {
 .footer a {
   color: var(--accent);
 }
+/* ============================================================
+   MODERN TECH FOOTER
+   ============================================================ */
 
+/* .modern-footer {
+  background: linear-gradient(
+    to top,
+    rgba(var(--bg-rgb), 0.9),
+    rgba(var(--bg-rgb), 0.6)
+  );
+
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid var(--card-border);
+
+  position: relative;
+  overflow: hidden;
+} */
+
+/* subtle glow line */
+/* .modern-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+
+  opacity: 0.5;
+} */
+
+/* .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  max-width: 1100px;
+  margin: auto;
+} */
+
+/* left side layout */
+
+/* .footer-left {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+} */
+
+/* built with section */
+
+/* .footer-built {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-wrap: wrap;
+} */
+
+/* coffee text aligned nicely */
+
+/* .coffee {
+  white-space: nowrap;
+
+  font-family: monospace;
+
+  opacity: 0.7;
+} */
+
+/* right side */
+
+/* .footer-right {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  white-space: nowrap;
+} */
+
+/* responsive fix */
+
+/* @media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+} */
+
+/* tech stack badges */
+
+/* .footer-built {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+
+/* .tech {
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  background: var(--accent-soft);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition: 0.3s;
+} */
+
+/* hover glow */
+/* .tech:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+} */
+
+/* coffee text */
+
+/* .coffee {
+  opacity: 0.7;
+
+  font-family: monospace;
+} */
+
+/* right side */
+
+/* .footer-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+} */
+
+/* availability status */
+
+.footer-status {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #22c55e;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* animated status dot */
+
+.footer-status .dot {
+  width: 8px;
+  height: 8px;
+
+  background: #22c55e;
+
+  border-radius: 50%;
+
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* copyright */
+
+/* .footer-copy {
+  opacity: 0.6;
+
+  font-size: 12px;
+} */
 /* ============================================================
    SCROLLBAR
    ============================================================ */

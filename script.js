@@ -409,35 +409,25 @@ function initSmoothScroll() {
    ============================================================ */
 function initAmbientBackground() {
   const root = document.documentElement;
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  if (reducedMotion.matches) {
-    root.style.setProperty("--ambient-rotation", "0deg");
-    return;
-  }
-
-  let lastScrollY = window.scrollY || 0;
+  let lastScroll = window.scrollY;
   let rotation = 0;
-
-  function updateRotation(deltaY) {
-    rotation = (rotation + deltaY * 0.12) % 360;
-    root.style.setProperty("--ambient-rotation", `${rotation}deg`);
-  }
 
   window.addEventListener(
     "scroll",
     () => {
-      const currentScrollY = window.scrollY || 0;
-      const deltaY = currentScrollY - lastScrollY;
-      lastScrollY = currentScrollY;
+      const currentScroll = window.scrollY;
+      const diff = currentScroll - lastScroll;
 
-      if (!deltaY) return;
-      updateRotation(deltaY);
+      lastScroll = currentScroll;
+
+      // adjust speed
+      rotation += diff * 0.15;
+
+      root.style.setProperty("--ambient-rotation", rotation + "deg");
     },
     { passive: true },
   );
-
-  root.style.setProperty("--ambient-rotation", "0deg");
 }
 
 /* ============================================================
@@ -580,3 +570,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initImageFallback();
 });
+document.getElementById("year").textContent = new Date().getFullYear();
